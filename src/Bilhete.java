@@ -5,15 +5,16 @@ public class Bilhete {
     long numero;
     private double saldo;
     Usuario usuario;
-    private double valor;
 
-    public Bilhete(Usuario usuario, long numero, double saldo) {
+    public Bilhete(Usuario usuario) {
         Random rd = new Random();
         this.numero = rd.nextInt(1000, 10000);
         this.usuario = usuario;
-        this.saldo = saldo;
     }
 
+    public double getSaldo (double saldo) {
+        return saldo;
+    }
     public double carregarBilhete(double valor) {
         return saldo += valor;
     }
