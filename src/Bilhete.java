@@ -12,9 +12,6 @@ public class Bilhete {
         this.usuario = usuario;
     }
 
-    public double getSaldo (double saldo) {
-        return saldo;
-    }
     public double carregarBilhete(double valor) {
         return saldo += valor;
     }

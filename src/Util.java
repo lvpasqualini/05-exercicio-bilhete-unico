@@ -46,7 +46,7 @@ public class Util {
                         listTicket();
                         break;
                     case 3:
-
+                        removeTicket();
                         break;
                 }
             }
@@ -104,7 +104,11 @@ public class Util {
         }
     }
 
-    private int pesquisar() {
+    private void removeTicket() {
+
+    }
+
+    private int search() {
         long cpf = parseLong(showInputDialog("Informe o CPF para procura: "));
         for (int i = 0; i < index; i++) {
             if (bilhete[i].usuario.cpf == cpf) {
@@ -116,7 +120,7 @@ public class Util {
     }
 
     private void carregarBilhete() {
-        int position = pesquisar();
+        int position = search();
         double valor;
         if(position != -1){
             valor = parseDouble(showInputDialog("Valor da recarga"));
@@ -125,14 +129,14 @@ public class Util {
     }
 
     private void consultarSaldo() {
-        int position =  pesquisar();
+        int position =  search();
         if(position != -1) {
             showMessageDialog(null,"Saldo R$ " +bilhete[position].getSaldo());
         }
     }
 
     private void passarNaCatraca(){
-        int position =  pesquisar();
+        int position =  search();
         if(position != -1) {
             bilhete[position].catraca();
         }
